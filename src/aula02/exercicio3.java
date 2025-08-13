@@ -12,6 +12,7 @@ public class exercicio3 {
 		double valorDesconto = valor * desconto;
 		double valorFinal = valor - valorDesconto;
 		System.out.println("O desconto oferecido foi de R$" + valorDesconto + " e o valor final da compra é R$" + valorFinal);
+		input.close();
 	}
 
 }
