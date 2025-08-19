@@ -24,6 +24,7 @@ public class ex01 {
 		else {
 			System.out.printf("A soma %d é menor que %d (valor de C)", soma, C);
 		}
+		input.close();
 	}
 
 }

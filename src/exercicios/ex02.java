@@ -22,7 +22,7 @@ public class ex02 {
 		else {
 			System.out.println("O número é ímpar");
 		}
-
+		input.close();
 	}
 
 }
