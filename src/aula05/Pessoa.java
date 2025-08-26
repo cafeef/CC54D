@@ -8,14 +8,18 @@ public class Pessoa {
 	
 	//métodos da classe pessoa
 	public void andar() {
-		
+		System.out.println(nome + " está andando");
 	}
 	
 	public void correr() {
-		
+		System.out.println(nome + " está correndo");
 	}
 	
 	public void falar() {
-		
+		System.out.println(nome + " está falando");
+	}
+	
+	public String toString() {
+		return "Nome: " + nome + "\nIdade: " + idade + "\nPeso: " + peso;
 	}
 }
