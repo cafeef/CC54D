@@ -11,6 +11,17 @@ public class Carro {
 	boolean ligado;
 	int velocidade;
 	
+	//Metodo construtor da classe Carro
+	public Carro(String mod, String mar, String pla, String c, int a) {
+		System.out.println("Executando o método construtor...");	
+		modelo = mod;
+		marca = mar;
+		ano = a;
+		placa = pla;
+		cor = c;
+	
+	}
+	
 	//Métodos da classe Carro
 	public void ligar() {
 		System.out.println(marca + " " + modelo + " está ligando");
