@@ -1,4 +1,4 @@
-package aula07;
+package aula12;
 
 public class Carro {
 	
@@ -81,42 +81,42 @@ public class Carro {
 			System.out.println("O carro está desligado, não se pode frear.");
 		}
 	}
+	
+	
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public int getAno() {
+		return ano;
+	}
+
+	public String getPlaca() {
+		return placa;
+	}
+
+	public String getCor() {
+		return cor;
+	}
+
+	public boolean isLigado() {
+		return ligado;
+	}
+
+	public int getVelocidade() {
+		return velocidade;
+	}
 
 	@Override
 	public String toString() {
 		return "Carro [modelo=" + this.modelo + ", marca=" + this.marca + ", ano=" + this.ano + ", placa=" + this.placa + ", cor=" + this.cor
 				+ ", ligado=" + this.ligado + ", velocidade=" + this.velocidade + "]";
 	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public void setAno(int ano) {
-		this.ano = ano;
-	}
-
-	public void setPlaca(String placa) {
-		this.placa = placa;
-	}
-
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
-
-	public void setLigado(boolean ligado) {
-		this.ligado = ligado;
-	}
-
-	public void setVelocidade(int velocidade) {
-		this.velocidade = velocidade;
-	}
-
-	
 	
 	
 }
