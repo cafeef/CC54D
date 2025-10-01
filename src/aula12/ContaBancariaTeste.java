@@ -7,8 +7,11 @@ public class ContaBancariaTeste {
 		banco1.adicionarNovaConta(111, "João da Silva");
 		banco1.adicionarNovaConta(222, "Maria de Oliveira");
 		banco1.adicionarNovaConta(222, "Ricardo Carvalho");
-		banco1.excluirConta(111);
-		banco1.excluirConta(666);
+		
+		banco1.verificarSaldo(222);
+		banco1.efetuarDeposito(222, 100);
+		banco1.verificarSaldo(222);
+		banco1.efetuarSaque(222, 100);
 		banco1.verificarSaldo(222);
 	}
 

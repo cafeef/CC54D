@@ -15,7 +15,8 @@ public class Banco {
 	}
 	
 	public void adicionarNovaConta(int numeroConta, String nomeTitular) {
-		if (this.verificarContaExistente(numeroConta) == false) {
+		ContaBancaria contaBancaria = verificarContaExistente(numeroConta);
+		if (contaBancaria == null) {
 			ContaBancaria cb = new ContaBancaria(numeroConta, nomeTitular);
 			contas.add(cb);
 			System.out.println("Conta " + numeroConta + " criada com sucesso!");
@@ -26,39 +27,47 @@ public class Banco {
 		
 	}
 	
-	public boolean verificarContaExistente(int numeroConta) {
-		for (int i = 0; i < contas.size(); i++) {
-			ContaBancaria cb = this.contas.get(i);
-			if (cb.getNumeroConta() == numeroConta) {
-				return true;
+	public ContaBancaria verificarContaExistente(int numeroConta) {
+		for (ContaBancaria contaBancaria : this.contas) {
+			if (contaBancaria.getNumeroConta() == numeroConta) {
+				return contaBancaria;
 			}
 		}
-		return false;
+		return null;
 	}
 	
 	public void excluirConta(int numeroConta) {
-		boolean existe = this.verificarContaExistente(numeroConta);
-		if (existe) {
-			for (int i = 0; i < contas.size(); i++) {
-				ContaBancaria contaBancaria = this.contas.get(i);
-				if (contaBancaria.getNumeroConta() == numeroConta) {
-					this.contas.remove(i);
-					System.out.println("Conta " + numeroConta + " excluída com sucesso!");
-				}
-			}			
-		}
+		ContaBancaria contaBancaria = this.verificarContaExistente(numeroConta);
+		if (contaBancaria != null) {
+				this.contas.remove(contaBancaria);
+				System.out.println("Conta " + numeroConta + " excluída com sucesso!");
+		}		
 		else System.out.println("Conta inexistente!");
 	}
 	
 	public void verificarSaldo(int numeroConta) {
-		for (int i = 0; i < contas.size(); i++) {
-			ContaBancaria contaBancaria = this.contas.get(i);
-			if (contaBancaria.getNumeroConta() == numeroConta) {
-				this.contas.remove(i);
-				System.out.println("Conta: " + numeroConta + "\nSaldo: " + contaBancaria.getSaldo());
-				return;
-			}
-		}
-		System.out.println("Conta inexistente!");
+		ContaBancaria contaBancaria = this.verificarContaExistente(numeroConta);
+		if (contaBancaria != null) {
+			contaBancaria.imprimirSaldo();
+			return;
+		}		
+		else System.out.println("Conta inexistente!");
 	}
+	
+	public void efetuarSaque(int numeroConta, double valor) {
+		ContaBancaria contaBancaria = this.verificarContaExistente(numeroConta);
+		if (contaBancaria != null) {
+			contaBancaria.sacar(valor);
+		}
+		else System.out.println("Conta inexistente!");
+	}
+	
+	public void efetuarDeposito(int numeroConta, double valor) {
+		ContaBancaria contaBancaria = this.verificarContaExistente(numeroConta);
+		if (contaBancaria != null) {
+			contaBancaria.depositar(valor);
+		}
+		else System.out.println("Conta inexistente!");
+	}
+	
 }
