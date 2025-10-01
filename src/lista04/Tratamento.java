@@ -6,9 +6,20 @@ public class Tratamento {
 	private String dataInicio;
 	private String dataFim;
 	
-	public Tratamento(String descricao, String dataInicio) {
+	public Tratamento() {
+		this.descricao = " ";
+		this.dataInicio = " ";
+		this.dataFim = " ";
+	}
+	
+	public void iniciarTratamento(String descricao, String dataInicio) {
 		this.descricao = descricao;
 		this.dataInicio = dataInicio;
+	}
+	
+	public void finalizarTratamento(String dataFim) {
+		this.dataFim = dataFim;
+		
 	}
 	
 	public void imprimirDados() {
@@ -16,5 +27,6 @@ public class Tratamento {
 		System.out.println("Data de Início: " + this.dataInicio);
 		System.out.println("Data Fim: " + this.dataFim);
 	}
+	
 	
 }

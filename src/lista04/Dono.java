@@ -16,5 +16,12 @@ public class Dono {
 		this.endereco = endereco;
 	}
 	
-	
+	public void imprimirDados() {
+		System.out.println("CPF: " + this.cpf);
+		System.out.println("Nome: " + this.nome);
+		System.out.println("Telefone: " + this.telefone);
+		System.out.println("E-mail: " + this.email);
+		System.out.println("\n===== Imprimindo dados do endereço =====");
+		endereco.imprimirEndereco();
+	}
 }
