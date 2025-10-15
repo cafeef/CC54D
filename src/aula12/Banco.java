@@ -15,8 +15,7 @@ public class Banco {
 	}
 	
 	public void adicionarNovaConta(int numeroConta, String nomeTitular) {
-		ContaBancaria contaBancaria = verificarContaExistente(numeroConta);
-		if (contaBancaria == null) {
+		if (this.verificarContaExistente(numeroConta) == null) {
 			ContaBancaria cb = new ContaBancaria(numeroConta, nomeTitular);
 			contas.add(cb);
 			System.out.println("Conta " + numeroConta + " criada com sucesso!");
