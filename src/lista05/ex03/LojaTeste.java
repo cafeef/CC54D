@@ -8,6 +8,9 @@ public class LojaTeste {
 		loja1.cadastrarProduto(4, 2, "Boina", "Versace", "Donatella", 80);
 		loja1.cadastrarProduto(2, 1, "Bengala", "Gucci", "Flex", 20);
 		loja1.exibirProdutos();
+		loja1.venderProduto(1, 1);
+		loja1.adquirirProduto(3, 2);
+		loja1.exibirProdutos();
 	}
 
 }

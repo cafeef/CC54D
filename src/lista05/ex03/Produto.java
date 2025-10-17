@@ -8,14 +8,14 @@ public class Produto {
 	private int quantidadeEstoque;
 	private double preco;
 	
-	public Produto(int codigo, String nome, String marca, String modelo, double preco) {
+	public Produto(int codigo, String nome, String marca, String modelo, double preco, int quantidadeEstoque) {
 		this.codigo = codigo;
 		this.nome = nome;
 		this.marca = marca;
 		this.modelo = modelo;
 		this.preco = preco;
-		this.quantidadeEstoque = 0;
-	}
+		this.quantidadeEstoque = quantidadeEstoque;
+		}
 
 	public int getCodigo() {
 		return codigo;

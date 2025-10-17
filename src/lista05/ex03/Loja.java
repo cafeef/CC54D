@@ -15,25 +15,23 @@ public class Loja {
 	}
 	
 	public void cadastrarProduto(int quantidade, int codigo, String nome, String marca, String modelo, double preco) {
-		Produto produto;
 		if (produtos.containsKey(codigo)) {
-			produto = produtos.get(codigo);
 			adquirirProduto(quantidade, codigo);
 		}
 		else {
-			produto = new Produto(codigo, nome, marca, modelo, preco);
+			Produto produto = new Produto(codigo, nome, marca, modelo, preco, quantidade);
 			produtos.put(codigo, produto);
 		}
 	}
 	
 	public void adquirirProduto(int quantidade, int codigo) {
-		Produto produto;
 		if (produtos.containsKey(codigo)) {
-			produto = produtos.get(codigo);
-			produto.setQuantidadeEstoque((produto.getQuantidadeEstoque() + quantidade));
+			Produto produto = produtos.get(codigo);
+			int quant = produto.getQuantidadeEstoque() + quantidade;
+			produto.setQuantidadeEstoque(quant);
 		}
 		else {
-			System.out.println("Produto" + codigo + " não encontrado na base de dados.");
+			System.out.println("Produto " + codigo + " não encontrado na base de dados.");
 		}
 	}
 	
@@ -58,7 +56,8 @@ public class Loja {
 		if (produtos.containsKey(codigo)) {
 			Produto produto = produtos.get(codigo);
 			if (produto.getQuantidadeEstoque() >= quantidade) {
-				produto.setQuantidadeEstoque(produto.getQuantidadeEstoque() - quantidade);
+				int quant = produto.getQuantidadeEstoque() - quantidade;
+				produto.setQuantidadeEstoque(quant);
 				System.out.println(quantidade + " de " + produto.getNome() + " vendido(os) com sucesso!");
 			}
 			else {
