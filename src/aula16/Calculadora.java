@@ -13,7 +13,6 @@ public class Calculadora {
 	}
 	
 	public Integer somar(List<Integer> lista) {
-		int tamanho = lista.size();
 		Integer soma = 0;
 		for (Integer elemento : lista) {
 			soma = soma + elemento;
