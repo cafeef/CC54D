@@ -4,16 +4,23 @@ public class Endereco {
 	protected String logradouro;
 	protected int numero;
 	protected String bairro;
+	protected String cep;
 	protected String cidade;
 	protected String uf;
 	
-	public Endereco(String logradouro, int numero, String bairro, String cidade, String uf) {
+	public Endereco(String logradouro, int numero, String bairro, String cep, String cidade, String uf) {
 		this.logradouro = logradouro;
 		this.numero = numero;
 		this.bairro = bairro;
+		this.cep = cep;
 		this.cidade = cidade;
 		this.uf = uf;
 		
+	}
+	
+	public void imprimirDados() {
+		System.out.println(this.logradouro + ", " + this.numero + " - " + this.bairro + ", " + this.cidade + " - " + this.cep + ", " + this.uf);
+
 	}
 
 	public String getLogradouro() {
